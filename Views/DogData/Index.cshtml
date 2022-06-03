@@ -1,0 +1,32 @@
+﻿@using PetzWorld.Models;
+@model List<Dog>;
+
+@{
+    ViewData["Title"] = "Dog Data sets";
+}
+
+<h1>List of all dog data</h1>
+
+@if (Model.Count == 0)
+{
+    <p>No dog have been added yet!</p>
+}
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Breed</th>
+        <th>Age</th>
+    </tr>
+
+    @foreach (Dog DogData in Model)
+    {
+        <tr>
+            <td>@DogData.Id</td>
+            <td>@DogData.Name</td>
+            <td>@DogData.Breed</td>
+            <td>@DogData.Age</td>
+        </tr>
+    }
+</table>
